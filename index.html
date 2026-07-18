@@ -109,7 +109,7 @@
 
         <div class="about-image">
 
-            <img src="assets/images/hero/about-truck.jpg" alt="SV Solutions">
+            <img src="assets/images/hero/about-truck1.png" alt="SV Solutions">
 
         </div>
 
@@ -347,7 +347,7 @@
 
 </section>
 <!-- ==========================
-     SHIPMENT TRACKING
+     SHIPMENT ASSISTANCE
 =========================== -->
 
 <section class="tracking" id="tracking">
@@ -356,41 +356,31 @@
 
         <div class="section-title">
 
-            <h2>Track Your Shipment</h2>
+            <h2>Need to Track Your Shipment?</h2>
 
             <p>
-                Select your courier partner and enter your tracking number.
-                You will be redirected to the official tracking page.
+                If your shipment was booked through one of our logistics partners,
+                we will redirect you to the official tracking portal.
             </p>
 
         </div>
 
-        <div class="tracking-box">
+        <div class="tracking-card">
 
-            <input
-                type="text"
-                id="trackingNumber"
-                placeholder="Enter Tracking / AWB Number">
+            <div class="tracking-icon">
+                📦
+            </div>
 
-            <select id="courierCompany">
+            <h3>Track Through Our Logistics Partners</h3>
 
-                <option value="">Select Courier Company</option>
+            <p>
 
-                <option value="bluedart">Blue Dart</option>
+                Click below to choose your courier partner and continue
+                to their official tracking website.
 
-                <option value="delhivery">Delhivery</option>
+            </p>
 
-                <option value="gati">Gati</option>
-
-                <option value="indiapost">India Post</option>
-
-                <option value="dpworld">DP World</option>
-
-                <option value="movin">MOVIN</option>
-
-            </select>
-
-            <button onclick="trackShipment()">
+            <button id="openTracking">
 
                 Track Shipment
 
@@ -401,90 +391,115 @@
     </div>
 
 </section>
+
 <!-- ==========================
-     INSTANT QUOTE
-=========================== -->
+TRACKING POPUP
+========================== -->
 
-<section class="quote" id="quote">
+<div id="trackingModal" class="modal">
 
-    <div class="container">
+    <div class="modal-content">
 
-        <div class="section-title">
+        <span class="close-modal">&times;</span>
 
-            <h2>Get an Instant Quote</h2>
+        <h2>Track Your Shipment</h2>
 
-            <p>
-                Fill in your moving details and send your request directly to us on WhatsApp.
-            </p>
+        <p>
+            Select the courier partner through which your shipment was booked.<br>
+            You will be redirected to the official tracking page.
+        </p>
 
-        </div>
+        <div class="courier-list">
 
-        <div class="quote-box">
+            <!-- Blue Dart -->
 
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Your Name">
+            <button class="courier-card"
+                onclick="window.open('https://www.bluedart.com/tracking','_blank')">
 
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="Mobile Number">
+                <img src="assets/images/partners/bluedart.png" alt="Blue Dart">
 
-            <input
-                type="text"
-                id="pickup"
-                placeholder="Pickup City">
+                <span>Blue Dart</span>
 
-            <input
-                type="text"
-                id="destination"
-                placeholder="Destination City">
+                <div class="arrow-circle">→</div>
 
-            <select id="serviceType">
+            </button>
 
-                <option value="">Select Service</option>
+            <!-- Delhivery -->
 
-                <option>Household Shifting</option>
+            <button class="courier-card"
+                onclick="window.open('https://www.delhivery.com/tracking','_blank')">
 
-                <option>Office Relocation</option>
+                <img src="assets/images/partners/delhivery.png" alt="Delhivery">
 
-                <option>Courier Service</option>
+                <span>Delhivery</span>
 
-                <option>Surface Cargo</option>
+                <div class="arrow-circle">→</div>
 
-                <option>Air Cargo</option>
+            </button>
 
-                <option>Bike Transport</option>
+            <!-- Gati -->
 
-                <option>Car Transport</option>
+            <button class="courier-card"
+                onclick="window.open('https://gaticouriertracking.com/','_blank')">
 
-                <option>Local Shifting</option>
+                <img src="assets/images/partners/gati.png" alt="Gati">
 
-                <option>Intercity Shifting</option>
+                <span>Gati</span>
 
-            </select>
+                <div class="arrow-circle">→</div>
 
-            <input
-                type="text"
-                id="weight"
-                placeholder="Weight / Number of Items">
+            </button>
 
-            <input
-                type="date"
-                id="movingDate">
+            <!-- DP World -->
 
-            <button onclick="sendQuote()">
+            <button class="courier-card"
+                onclick="window.open('https://www.logistics.dpworld.com/','_blank')">
 
-                Send on WhatsApp
+                <img src="assets/images/partners/dpworld.png" alt="DP World">
+
+                <span>DP World</span>
+
+                <div class="arrow-circle">→</div>
+
+            </button>
+
+            <!-- India Post -->
+
+            <button class="courier-card"
+                onclick="window.open('https://www.indiapost.gov.in/','_blank')">
+
+                <img src="assets/images/partners/indiapost.png" alt="India Post">
+
+                <span>India Post</span>
+
+                <div class="arrow-circle">→</div>
+
+            </button>
+
+            <!-- MOVIN -->
+
+            <button class="courier-card"
+                onclick="window.open('https://www.movin.in/shipment/track','_blank')">
+
+                <img src="assets/images/partners/movin.png" alt="MOVIN">
+
+                <span>MOVIN</span>
+
+                <div class="arrow-circle">→</div>
 
             </button>
 
         </div>
 
+        <div class="tracking-note">
+
+            🛡 You are being redirected to the official website of the selected courier partner.
+
+        </div>
+
     </div>
 
-</section>
+</div>
 <!-- ==========================
      TRUST SECTION START
 =========================== -->

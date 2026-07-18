@@ -200,3 +200,30 @@ ${message}`;
     window.open(url,"_blank");
 
 }
+const modal = document.getElementById("trackingModal");
+
+const openBtn = document.getElementById("openTracking");
+
+const closeBtn = document.querySelector(".close-modal");
+
+openBtn.onclick = function(){
+
+    modal.style.display = "block";
+
+}
+
+closeBtn.onclick = function(){
+
+    modal.style.display = "none";
+
+}
+
+window.onclick = function(event){
+
+    if(event.target == modal){
+
+        modal.style.display = "none";
+
+    }
+
+}
