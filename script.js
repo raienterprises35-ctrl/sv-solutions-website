@@ -144,17 +144,21 @@ Moving Date: ${date}`;
 Smooth Scroll
 ===========================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click",function(e){
+    anchor.addEventListener("click", function(e) {
 
-        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        if(target){
 
-            behavior:"smooth"
+            e.preventDefault();
 
-        });
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
 
     });
 
