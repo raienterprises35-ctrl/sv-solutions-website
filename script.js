@@ -231,3 +231,48 @@ window.onclick = function(event){
     }
 
 }
+
+/*==================================
+SCROLL REVEAL
+==================================*/
+
+const reveals = document.querySelectorAll("section");
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
+
+function revealSections(){
+
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+
+        if(top < windowHeight - 120){
+
+            section.classList.add("active");
+
+        }
+
+    });
+
+}
+
+reveals.forEach(section=>{
+
+    section.classList.add("reveal");
+
+});
+window.addEventListener("scroll",()=>{
+
+const scrollTop=document.documentElement.scrollTop;
+
+const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+const progress=(scrollTop/height)*100;
+
+document.getElementById("progressBar").style.width=progress+"%";
+
+});
